@@ -16,7 +16,6 @@ inputs:
   PARSE_MODE:
     description: "Parse mode of the message (MarkdownV2, Markdown, HTML, or text)"
     required: false
-    default: "text"
 runs:
   using: "node16"
   main: "index.js"

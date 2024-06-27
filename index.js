@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 const TELEGRAM_API_BASE_URL = "https://api.telegram.org";
 
 const send = async ({ token, chatId, threadId, text, parseMode }) => {
-  const apiUrl = new URL(`${TELEGRAM_API_BASE_URL}/bot${token}/sendMessage`);
+  const apiUrl = `${TELEGRAM_API_BASE_URL}/bot${token}/sendMessage`;
   const payload = {
     chat_id: chatId,
     message_thread_id: threadId,
@@ -33,7 +33,7 @@ const main = async () => {
     const chatId = core.getInput("CHAT_ID", { required: true });
     const text = core.getInput("TEXT", { required: true });
     const threadId = core.getInput("MESSAGE_THREAD_ID") || undefined;
-    const parseMode = core.getInput("PARSE_MODE");
+    const parseMode = core.getInput("PARSE_MODE") || undefined;
 
     const result = await send({ token, chatId, threadId, text, parseMode });
     console.log("Message sent successfully:", result);

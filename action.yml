@@ -1,0 +1,25 @@
+name: "Notifier For Telegram"
+description: "Send message to Telegram"
+inputs:
+  BOT_TOKEN:
+    description: "Telegram Bot Token"
+    required: true
+  CHAT_ID:
+    description: "Telegram Chat ID"
+    required: true
+  TEXT:
+    description: "Message to send"
+    required: true
+  MESSAGE_THREAD_ID:
+    description: "Telegram Message Thread ID"
+    required: false
+  PARSE_MODE:
+    description: "Parse mode of the message (MarkdownV2, Markdown, HTML, or text)"
+    required: false
+    default: "text"
+runs:
+  using: "node16"
+  main: "index.js"
+branding:
+  icon: "message-square"
+  color: "blue"

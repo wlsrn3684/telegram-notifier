@@ -1,4 +1,5 @@
 import core from "@actions/core";
+import fetch from "node-fetch";
 
 const TELEGRAM_API_BASE_URL = "https://api.telegram.org";
 
